@@ -54,7 +54,11 @@ Uri::Uri(StringPiece str) : hasAuthority_(false), port_(0) {
           authorityAndPath.begin(),
           authorityAndPath.end(),
           authorityAndPathMatch,
-          authorityAndPathRegex)) {
+          authorityAndPathRegex))
+    authorityAndPath.begin(),
+          authorityAndPath.end(),
+          authorityAndPathMatch,
+          authorityAndPathRegex)){
     // Does not start with //, doesn't have authority
     hasAuthority_ = false;
     path_ = authorityAndPath.str();
