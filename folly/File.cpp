@@ -146,6 +146,9 @@ bool File::closeNoThrow() {
 void File::lock() {
   doLock(LOCK_EX);
 }
+  void File::lock() {
+  doLock(LOCK_EX);
+}
 bool File::try_lock() {
   return doTryLock(LOCK_EX);
 }
