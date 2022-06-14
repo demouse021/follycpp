@@ -58,9 +58,6 @@ struct format_table_conv_make_item {
       return alpha(index / constexpr_pow(Base, Size - offset - 1) % Base);
     }
   };
-  constexpr std::array<char, Size> operator()(std::size_t index) const {
-    return make_array_with<Size>(make_item{index});
-  }
 };
 
 //  ctor for items in the sign table
